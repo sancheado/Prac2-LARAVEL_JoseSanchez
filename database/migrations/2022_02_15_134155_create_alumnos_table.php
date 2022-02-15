@@ -20,11 +20,8 @@ return new class extends Migration
             $table->string('apellidos');
             $table->BigInteger('edad');
             $table->string('direccion');
-            $table->unsignedBiInteer('id_tipo');
-            $table->foreign('id_tipo')
-                ->references('id')
-                ->on('tipo_estudios')
-                ->onDelete('cascade');
+            $table->BigInteger('id_centro');
+
         });
     }
 

@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TipoEstudiosController extends Controller
+{
+    public function index()
+    {
+        $tipo_estudios = $this->tipo_estudios->obtenerTipoEstudios();
+        return view('tipo_estudios.lista', ['tipo_estudios' => $tipo_estudios]);
+    }
+
+    public function create()
+    {
+        return view('tipo_estudios.crear');
+    }
+
+    public function store(Request $request)
+    {
+        $tipo_estudios = new TipoEstudios($request->all());
+        $tipo_estudios->save();
+        return redirect()->action([TipoEstudiosController::class, 'index']);
+    }
+
+    public function show($id)
+    {
+        $tipo_estudios = $this->tipo_estudios->obtenerTipoEstudiosPorId($id);
+        return view('tipo_estudios.ver',['tipo_estudios' => $tipo_estudios]);
+    }
+
+    public function edit($id)
+    {
+        $tipo_estudios = $this->tipo_estudios->obtenerAlumnoPorId($id);
+        return view('tipo_estudios.editar',['tipo_estudios' => $tipo_estudios]); 
+    }
+
+    public function update(Request $request, $id)
+    {
+        $tipo_estudios = TipoEstudios::find($id);
+        $tipo_estudios->fill($request->all());
+        $tipo_estudios->save();
+        return redirect()->action([TipoEstudiosController::class, 'index']);
+    }
+
+    public function destroy($id)
+    {
+        $tipo_estudios = TipoEstudios::find($id);
+        $tipo_estudios->delete();
+        return redirect()->action([TipoEstudiosController::class, 'index']);
+    }
+}
