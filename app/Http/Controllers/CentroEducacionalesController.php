@@ -33,8 +33,8 @@ class CentroEducacionalesController extends Controller
 
     public function show($id)
     {
-        $centros = $this->CentroEducacional->obtenerCentroEducacional($id);
-        return view('centros.ver',['centros' => $centros]);
+        $centros = $this->CentroEducacional->obtenerCentroEducacionalPorId($id);
+        return view('centros.ver',['CentroEducacional' => $centros]);
     }
 
     public function edit($id)

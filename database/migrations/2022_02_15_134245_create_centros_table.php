@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('centros', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('c');
+            $table->string('nombre');
             $table->string('localidad');
             $table->string('direccion');
             $table->BigInteger('n_alumnos');
