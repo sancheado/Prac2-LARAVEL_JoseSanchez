@@ -14,22 +14,22 @@
           <thead>
             <tr>
               <th scope="col">Nombre</th>
-              <th scope="col">Localidad</th>
-              <th scope="col">Direccion</th>
+              <th scope="col">Asignaturas</th>
+              <th scope="col">Modalidad</th>
               <th scope="col">Numero Alumnos</th>
-              <th scope="col">Enlaces</th>
+              <th scope="col">Id Alumno</th>
             </tr>
           </thead>
           @foreach ($TipoEstudios as $tipo)
           <tr>
               <td>{{ $tipo->nombre}}</td>
-              <td>{{ $tipo->localidad}}</td>
-              <td>{{ $tipo->direccion}}</td>
-              <td>{{ $tipo->n_alumnos}}</td>
+              <td>{{ $tipo->asignaturas}}</td>
+              <td>{{ $tipo->modalidad}}</td>
+              <td>{{ $tipo->id_alumno}}</td>
               <td>
                   <a href="/tipo_estudios/ver/{{$tipo->id}}"> Ver </a></br>
                   <a href="/tipo_estudios/editar/{{$tipo->id}}"> Editar </a></br>
-                  <a href="/tipo_estudios/eliminar/{{$tipo->id}}"> Eliminar </a></br>
+                  <a href="/tipo_estudios/eliminar/{{$tipo->id}}" onclick="return eliminarTipo('Eliminar Tipo')"> Eliminar </a></br>
               </td>
           </tr>
           @endforeach
@@ -47,6 +47,11 @@
               <a href="tipo_estudios/crear"> Crear tipo de estudios</a>
           </div>
       </div>
+      <script>
+        function eliminarTipo(value) {
+            action = confirm(value) ? true : event.preventDefault()
+        }
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </body>
 </html>

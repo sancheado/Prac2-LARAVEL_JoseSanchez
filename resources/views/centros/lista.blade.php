@@ -17,6 +17,8 @@
               <th scope="col">Localidad</th>
               <th scope="col">Direccion</th>
               <th scope="col">Numero Alumnos</th>
+              <th scope="col">Id Alumno</th>
+              <th scope="col">Id Tipo de Estudios</th>
               <th scope="col">Enlaces</th>
             </tr>
           </thead>
@@ -26,10 +28,12 @@
               <td>{{ $centro->localidad}}</td>
               <td>{{ $centro->direccion}}</td>
               <td>{{ $centro->n_alumnos}}</td>
+              <td>{{ $centro->id_alumno}}</td>
+              <td>{{ $centro->id_tipo}}</td>
               <td>
                   <a href="/centros/ver/{{$centro->id}}"> Ver </a></br>
                   <a href="/centros/editar/{{$centro->id}}"> Editar </a></br>
-                  <a href="/centros/eliminar/{{$centro->id}}"> Eliminar </a></br>
+                  <a href="/centros/eliminar/{{$centro->id}}" onclick="return eliminarCentro('Eliminar Centro')"> Eliminar </a></br>
               </td>
           </tr>
           @endforeach
@@ -47,6 +51,11 @@
               <a href="tipo_estudios/crear"> Crear tipo de estudios</a>
           </div>
       </div>
+      <script>
+        function eliminarCentro(value) {
+            action = confirm(value) ? true : event.preventDefault()
+        }
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </body>
 </html>
