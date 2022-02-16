@@ -11,7 +11,7 @@ class CentroEducacional extends Model
 
     protected $table = "centros";
 
-    protected $fillable = ['nombre','localidad','tipo_estudios','direccion','nalumnos','id_centro','id_tipo'];
+    protected $fillable = ['nombre','localidad','direccion','n_alumnos','id_alumno','id_tipo'];
 
     public function obtenerCentroEducacional(){
         return CentroEducacional::all();

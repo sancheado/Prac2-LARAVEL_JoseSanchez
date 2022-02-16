@@ -11,7 +11,7 @@ class Alumno extends Model
 
     protected $table = "alumnos";
 
-    protected $fillable = ['nombre','apellidos','edad','direccion','id_tipo'];
+    protected $fillable = ['nombre','apellidos','edad','direccion','id_centro'];
 
     public function obtenerAlumnos(){
         return Alumno::all();

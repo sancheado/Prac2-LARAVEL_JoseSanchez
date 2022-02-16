@@ -9,9 +9,9 @@ class TipoEstudios extends Model
 {
     use HasFactory;
 
-    protected $table = "tipo_estudios";
+    protected $table = "tipo_estudio";
 
-    protected $fillable = ['nombre','asinaturas','modalidad'];
+    protected $fillable = ['nombre','asignaturas','modalidad','id_alumno'];
 
     public function obtenerTipoEstudios(){
         return TipoEstudios::all();
