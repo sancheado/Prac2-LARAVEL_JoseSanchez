@@ -8,8 +8,8 @@
   </head>
 
   <body>
-      <h2>Listado de Tipos de Estudios de la <strong>Prac2 de LARAVEL</strong>
-      <div class="container-fluid">
+      <h2 class="text-center m-4 p-1">Listado de Tipos de Estudios de la <strong>Prac2 de LARAVEL</strong>
+      <div class="container-fluid mt-3">
       <table class="table table-dark">
           <thead>
             <tr>
@@ -22,10 +22,10 @@
           </thead>
           @foreach ($TipoEstudios as $tipo)
           <tr>
-              <td>{{ $tipo->nombre}}</td>
-              <td>{{ $tipo->asignaturas}}</td>
-              <td>{{ $tipo->modalidad}}</td>
-              <td>{{ $tipo->id_alumno}}</td>
+              <td class="text-center">{{ $tipo->nombre}}</td>
+              <td class="text-center">{{ $tipo->asignaturas}}</td>
+              <td class="text-center">{{ $tipo->modalidad}}</td>
+              <td class="text-center">{{ $tipo->id_alumno}}</td>
               <td>
                   <a href="/tipo_estudios/ver/{{$tipo->id}}"> Ver </a></br>
                   <a href="/tipo_estudios/editar/{{$tipo->id}}"> Editar </a></br>
@@ -36,15 +36,15 @@
       </table>
       </div>
       <div class="container">
-          <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
               <a href="centros/crear"> Nuevo Centro</a>
               <a href="centros"> Ver Centros</a>
 
               <a href="alumnos/crear">Nuevo Alumno</a>
-              <a href="alumnos"> Consultar Alumnos</a>
+              <a href="alumnos"> Ver Alumnos</a>
 
-              <a href="tipo_estudios"> Consultar Tipo Estudios</a>
-              <a href="tipo_estudios/crear"> Crear tipo de estudios</a>
+              <a href="tipo_estudios/crear"> Nuevo tipo de estudios</a>
+              <a href="tipo_estudios"> Ver Tipo Estudios</a>
           </div>
       </div>
       <script>

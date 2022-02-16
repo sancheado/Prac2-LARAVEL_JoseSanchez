@@ -12,7 +12,7 @@
    <p> Apellido: {{ $alumno->apellidos}}</p>
    <p> Edad: {{ $alumno->edad}}</p>
    <p> Dirección: {{ $alumno->direccion}}</p>
-   <a href="alumnos"> Consultar Alumnos</a>
+   <a href="/alumnos"> Volver a Alumnos</a>
 </div>
 </body>
 </html>

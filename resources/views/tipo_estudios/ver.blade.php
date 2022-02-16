@@ -12,7 +12,7 @@
    <p> Asignaturas: {{ $tipo_estudios->asignaturas}}</p>
    <p> Modalidad: {{ $tipo_estudios->modalidad}}</p>
    <p> ID de Alumnos: {{ $tipo_estudios->id_alumno}}</p>
-   <a href="/tipo_estudios"> Volver a Centros</a>
+   <a href="/tipo_estudios"> Volver a Tipos</a>
 </div>
 </body>
 </html>

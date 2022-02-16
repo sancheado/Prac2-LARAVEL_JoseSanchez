@@ -8,8 +8,8 @@
   </head>
 
   <body>
-      <h2>Listado de Centros de la <strong>Prac2 de LARAVEL</strong>
-      <div class="container-fluid">
+      <h2 class="text-center m-4 p-1">Listado de Centros de la <strong>Prac2 de LARAVEL</strong>
+      <div class="container-fluid mt-3">
       <table class="table table-dark">
           <thead>
             <tr>
@@ -24,13 +24,13 @@
           </thead>
           @foreach ($CentroEducacional as $centro)
           <tr>
-              <td>{{ $centro->nombre}}</td>
-              <td>{{ $centro->localidad}}</td>
-              <td>{{ $centro->direccion}}</td>
-              <td>{{ $centro->n_alumnos}}</td>
-              <td>{{ $centro->id_alumno}}</td>
-              <td>{{ $centro->id_tipo}}</td>
-              <td>
+              <td class="text-center">{{ $centro->nombre}}</td>
+              <td class="text-center">{{ $centro->localidad}}</td>
+              <td class="text-center">{{ $centro->direccion}}</td>
+              <td class="text-center">{{ $centro->n_alumnos}}</td>
+              <td class="text-center">{{ $centro->id_alumno}}</td>
+              <td class="text-center">{{ $centro->id_tipo}}</td>
+              <td class="text-center">
                   <a href="/centros/ver/{{$centro->id}}"> Ver </a></br>
                   <a href="/centros/editar/{{$centro->id}}"> Editar </a></br>
                   <a href="/centros/eliminar/{{$centro->id}}" onclick="return eliminarCentro('Eliminar Centro')"> Eliminar </a></br>
@@ -45,10 +45,10 @@
               <a href="centros"> Ver Centros</a>
 
               <a href="alumnos/crear">Nuevo Alumno</a>
-              <a href="alumnos"> Consultar Alumnos</a>
+              <a href="alumnos"> Ver Alumnos</a>
 
-              <a href="tipo_estudios"> Consultar Tipo Estudios</a>
-              <a href="tipo_estudios/crear"> Crear tipo de estudios</a>
+              <a href="tipo_estudios/crear"> Nuevo tipo de estudios</a>
+              <a href="tipo_estudios"> Ver Tipo Estudios</a>
           </div>
       </div>
       <script>
