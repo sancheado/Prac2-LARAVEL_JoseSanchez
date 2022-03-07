@@ -21,7 +21,7 @@ return new class extends Migration
             $table->BigInteger('edad');
             $table->string('direccion');
             $table->BigInteger('id_centro');
-
+            $table->foreign('id_centro')->references('id')->on('centros');
         });
     }
 

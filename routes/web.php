@@ -33,6 +33,9 @@ Route::put('/alumnos/editar/{id}', [AlumnoController::class, 'update']); //Updat
 
 Route::get('/alumnos/eliminar/{id}', [AlumnoController::class, 'destroy']); //eliminar alumno
 
+Route::get('/alumnos/{$id}/centro/', function($id){
+    return CentroEducacional::find($id)->centro->nombre;
+});
 
 //Routes for Centros
 Route::get('/centros',[CentroEducacionalesController::class, 'index']);
@@ -47,6 +50,14 @@ Route::put('/centros/editar/{id}', [CentroEducacionalesController::class, 'updat
 
 
 Route::get('/centros/eliminar/{id}', [CentroEducacionalesController::class, 'destroy']); //eliminar centro
+
+Route::get('/centros/{$id}/centro/', function($id){
+    return TipoEstudios::all();
+});
+Route::get('/centros/{$id}/obteneralumnos/', function($id){
+    return Alumno::all();
+});
+
 
 //Routes for Tipo Estudios
 Route::get('/tipos',[TipoEstudiosController::class, 'index']);
@@ -68,3 +79,10 @@ Route::put('/tipo_estudios/editar/{id}', [TipoEstudiosController::class, 'update
 
 Route::get('/tipo_estudios/eliminar/{id}', [TipoEstudiosController::class, 'destroy']);  //eliminar tipo
 Route::get('/tipos/eliminar/{id}', [TipoEstudiosController::class, 'destroy']);  //eliminar tipo
+
+Route::get('/tipos/{$id}/alumno/', function($id){
+    return Alumno::find($id)->id_alumno->nombre;
+});
+Route::get('/tipo_estudios/{$id}/alumno/', function($id){
+    return Alumno::find($id)->id_alumno->nombre;
+});

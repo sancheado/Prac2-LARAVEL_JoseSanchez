@@ -20,4 +20,9 @@ class TipoEstudios extends Model
     public function obtenerTipoEstudiosPorId($id){
         return TipoEstudios::find($id);
     }
+
+    //Mostramos los alumnos en función de su tipo de estudios. relacion 1:N
+    public function obtenerAlumno($id){
+        return $this->hasMany("App\Alumno");
+    }
 }

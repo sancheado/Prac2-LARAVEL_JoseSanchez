@@ -20,4 +20,9 @@ class Alumno extends Model
     public function obtenerAlumnoPorId($id){
         return Alumno::find($id);
     }
+
+    //Mostramos el centro en función de alumno. relacion 1:1
+    public function centro($id){
+        return $this->hasOne("App\CentroEducacional");
+    }
 }

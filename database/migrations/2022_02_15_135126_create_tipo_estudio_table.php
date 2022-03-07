@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('asignaturas');
             $table->string('modalidad');
             $table->Integer('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumnos');
         });
     }
 

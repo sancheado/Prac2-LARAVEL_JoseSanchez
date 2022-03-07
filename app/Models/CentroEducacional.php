@@ -20,4 +20,14 @@ class CentroEducacional extends Model
     public function obtenerCentroEducacionalPorId($id){
         return CentroEducacional::find($id);
     }
+
+    //Mostramos los alumnos en función del centro. relacion 1:N
+    public function obtenerAlumnos(){
+        return $this->hasMany("App\Alumno");
+    }
+
+    //Mostramos los tipos de estudios en relacion al centro. 1:N
+    public function centro(){
+        return $this->hasMany("App\CentroEducacional");
+    }
 }

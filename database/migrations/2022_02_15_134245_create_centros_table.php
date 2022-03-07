@@ -22,6 +22,8 @@ return new class extends Migration
             $table->BigInteger('n_alumnos');
             $table->Integer('id_alumno');
             $table->Integer('id_tipo');
+            $table->foreign('id_alumno')->references('id')->on('centros');
+            $table->foreign('id_tipo')->references('id')->on('alumnos');
         });
     }
 
